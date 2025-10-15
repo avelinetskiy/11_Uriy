@@ -1,13 +1,10 @@
-# 4 4 4 4 4 = 1024
-from itertools import*
-n=0
-for x in product('абвгд', repeat=5):
-    a=''.join(x)
-    f = 0
-    for i in range(len(a)-1):
-        if a[i]==a[i+1]:
-            f = 1
-            break
-    if a[0]!='а' and f==0:
-        n+=1
-print(n)
+def f(a, b, c):
+    if a<b or c=='11': return 0
+    if a==b: return 1
+    if a == 20:
+        c+='1'
+    if a== 8:
+        c+='1'
+    return f(a-1, b, c)+f(a-3, b, c)+f(a//2, b, c)
+
+print(f(31, 3, ''))
