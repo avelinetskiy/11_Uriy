@@ -1,0 +1,33 @@
+s = open('24_2.txt').readline()
+s = s.replace('++',' ').replace('+*',' ').replace('*+',' ').replace('**',' ')
+m = 0
+for c in s.split():
+    if len(c)>m:
+        for i in range(len(c)):
+            if c[i] not in '*+':
+                sub = ''
+                for j in range(i,len(c)):
+                    sub += c[j]
+                    try:
+                        if c[j] not in '*+' and eval(sub)==0:
+                            m = max(m, len(sub))
+                    except:
+                        pass
+print(m)
+
+f = open('24_2.txt').readline()
+alp = sorted('0123456789QWERTYUIOPASDFGHJKLZXCVBNM')[:16]
+a=[]
+for i in range(len(f)):
+    if f[i]=='0':
+        a.append(f[i:])
+m=0
+for el in a:
+    c = 1
+    for j in range(len(el)):
+        if el[j]==alp[c]:
+            c+=1
+            if c==16:
+                m = max(m, j+1)
+                break
+print(m)

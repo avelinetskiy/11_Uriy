@@ -1,7 +1,4 @@
 # Текстовый файл содержит только заглавные буквы латинского алфавита (ABC…Z). 
 # Определите наибольшую длину цепочки символов, среди которых нет символов K и L, стоящих рядом.
 
-f = open('24_2.txt').readline()
-
-a = [x for x in f.replace('KL', 'K L').replace('LK', 'L K').split()]
-print(len(max(a, key=len)))
+print(len(max([x for x in open('24_2.txt').readline().replace('KL', 'K L').replace('LK', 'L K').split()], key=len)))
