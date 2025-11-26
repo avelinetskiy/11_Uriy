@@ -15,4 +15,3 @@ for i in range(len(f)-2):
     mx = max(mx, k)
     
 print(mx-2)
-
